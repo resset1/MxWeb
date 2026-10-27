@@ -24,9 +24,7 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  overscroll-behavior-y: none;
-  overscroll-behavior-x: none;
-  touch-action: pan-y;
+  overflow-y: auto;
   -webkit-font-smoothing: antialiased;
   -webkit-tap-highlight-color: transparent;
 }
@@ -38,16 +36,38 @@ body {
   background-color: #131316;
 }
 
-/* Oculta la barra de desplazamiento en toda la página pero mantiene el scroll */
-html,
-body,
-.no-scrollbar {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE y Edge Legacy */
+/* Barra de desplazamiento moderna y oscura para computadoras de escritorio */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
 }
 
-html::-webkit-scrollbar,
-body::-webkit-scrollbar,
+::-webkit-scrollbar-track {
+  background: #131316;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a2a32;
+  border-radius: 9999px;
+  border: 2px solid #131316;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ea580c;
+}
+
+/* Soporte para Firefox */
+* {
+  scrollbar-color: #2a2a32 #131316;
+  scrollbar-width: thin;
+}
+
+/* Clase de utilidad para ocultar la barra solo cuando se especifique explícitamente */
+.no-scrollbar {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
 .no-scrollbar::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Edge moderno */
+  display: none !important;
 }

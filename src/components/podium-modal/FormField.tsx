@@ -12,6 +12,8 @@ export default function FormField({
   type = "text",
   required = false,
 }: FormFieldProps) {
+  const isDate = type === "date";
+
   return (
     <div className="flex flex-col gap-1.5 w-full">
       <label className="text-xs sm:text-sm font-semibold text-neutral-200">
@@ -23,7 +25,16 @@ export default function FormField({
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
         required={required}
-        className="w-full bg-[#131313] text-neutral-200 placeholder:italic placeholder:text-neutral-500 text-base sm:text-sm px-4 py-3 sm:py-3.5 rounded-2xl border-2 sm:border-3 border-neutral-600 focus:border-orange-500 focus:outline-none transition-all"
+        onClick={(e) => {
+          if (isDate) {
+            e.currentTarget.showPicker?.();
+          }
+        }}
+        className={`w-full bg-[#131313] text-neutral-200 placeholder:italic placeholder:text-neutral-500 text-base sm:text-sm px-4 py-3 sm:py-3.5 rounded-2xl border-2 sm:border-3 border-neutral-600 focus:border-orange-500 focus:outline-none transition-all ${
+          isDate
+            ? "[color-scheme:dark] cursor-pointer [&::-webkit-calendar-picker-indicator]:cursor-pointer [&::-webkit-calendar-picker-indicator]:opacity-80 hover:[&::-webkit-calendar-picker-indicator]:opacity-100"
+            : ""
+        }`}
       />
     </div>
   );
