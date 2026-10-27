@@ -51,7 +51,7 @@ export default function RegisterPodiumModal({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-black/75 backdrop-blur-xs transition-opacity duration-300 overscroll-contain"
+      className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-black/75 backdrop-blur-xs transition-opacity duration-300 overscroll-none overflow-x-hidden touch-none"
       onClick={handleClose}
       role="dialog"
       aria-modal="true"
@@ -59,7 +59,7 @@ export default function RegisterPodiumModal({
       {/* Contenedor del Modal con estilo smartphone / hoja emergente */}
       <div
         onClick={(e) => e.stopPropagation()}
-        className="w-full max-w-lg bg-[#131313] rounded-t-[32px] sm:rounded-[36px] shadow-2xl flex flex-col max-h-[92dvh] sm:max-h-[88vh] overflow-hidden animate-in fade-in slide-in-from-bottom-8 sm:slide-in-from-bottom-0 sm:zoom-in-95 duration-200 border border-neutral-800"
+        className="w-full max-w-lg bg-[#131313] rounded-t-4xl sm:rounded-[36px] shadow-2xl flex flex-col max-h-[92dvh] sm:max-h-[88vh] overflow-x-hidden overflow-y-hidden animate-in fade-in slide-in-from-bottom-8 sm:slide-in-from-bottom-0 sm:zoom-in-95 duration-200 border border-neutral-800 touch-pan-y overscroll-contain"
       >
         {/* Barra superior con tirador sutil (handle bar) */}
         <div className="pt-3 pb-1 flex justify-center">
@@ -89,8 +89,8 @@ export default function RegisterPodiumModal({
           </div>
         </div>
 
-        {/* Contenido scrolleable con el formulario (sin barra de scroll visible) */}
-        <div className="flex-1 overflow-y-auto no-scrollbar px-4 sm:px-6 pb-8 pt-1">
+        {/* Contenido scrolleable con el formulario (sin barra de scroll visible y estrictamente vertical) */}
+        <div className="flex-1 overflow-y-auto overflow-x-hidden no-scrollbar px-4 sm:px-6 pb-8 pt-1 touch-pan-y overscroll-contain">
           {successData ? (
             // Mensaje de éxito al registrar
             <div className="flex flex-col items-center justify-center py-8 text-center gap-4">

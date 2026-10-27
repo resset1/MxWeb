@@ -156,7 +156,10 @@ export default function PodiumForm({ raceTitle, onSuccess }: PodiumFormProps) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+    <form
+      onSubmit={handleSubmit}
+      className="flex flex-col gap-4 w-full max-w-full overflow-x-hidden touch-pan-y"
+    >
       {/* 1. Recuadro para subir la foto (estilo mockup) */}
       <PhotoUploader photoUrl={photoUrl} onPhotoSelected={setPhotoUrl} />
 
