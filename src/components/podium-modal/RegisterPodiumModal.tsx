@@ -51,7 +51,7 @@ export default function RegisterPodiumModal({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 bg-black/65 backdrop-blur-xs transition-opacity duration-300"
+      className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-black/75 backdrop-blur-xs transition-opacity duration-300 overscroll-contain"
       onClick={handleClose}
       role="dialog"
       aria-modal="true"
@@ -59,22 +59,22 @@ export default function RegisterPodiumModal({
       {/* Contenedor del Modal con estilo smartphone / hoja emergente */}
       <div
         onClick={(e) => e.stopPropagation()}
-        className="w-full max-w-md bg-[#131313] rounded-3xl sm:rounded-[36px] shadow-2xl flex flex-col max-h-[92vh] overflow-hidden animate-in fade-in zoom-in-95 duration-200"
+        className="w-full max-w-lg bg-[#131313] rounded-t-[32px] sm:rounded-[36px] shadow-2xl flex flex-col max-h-[92dvh] sm:max-h-[88vh] overflow-hidden animate-in fade-in slide-in-from-bottom-8 sm:slide-in-from-bottom-0 sm:zoom-in-95 duration-200 border border-neutral-800"
       >
         {/* Barra superior con tirador sutil (handle bar) */}
         <div className="pt-3 pb-1 flex justify-center">
-          <div className="w-12 h-1 bg-neutral-300 rounded-full" />
+          <div className="w-12 h-1 bg-neutral-600 rounded-full" />
         </div>
 
         {/* Encabezado: flecha hacia abajo (↓) y título */}
-        <div className="px-5 sm:px-6 pt-2 pb-3 flex flex-col gap-2">
+        <div className="px-4 sm:px-6 pt-2 pb-3 flex flex-col gap-2">
           <button
             type="button"
             onClick={handleClose}
-            className="w-9 h-9 flex items-center justify-center rounded-full hover:bg-neutral-100 hover:text-neutral-900 transition-colors cursor-pointer self-start -ml-1.5"
+            className="w-9 h-9 flex items-center justify-center rounded-full hover:bg-neutral-800 text-neutral-300 hover:text-white transition-colors cursor-pointer self-start -ml-1"
             aria-label="Cerrar modal"
           >
-            <i className="fi fi-br-cross text-neutral-300 text-lg"></i>
+            <i className="fi fi-br-cross text-neutral-300 text-base"></i>
           </button>
 
           <div>
@@ -90,7 +90,7 @@ export default function RegisterPodiumModal({
         </div>
 
         {/* Contenido scrolleable con el formulario (sin barra de scroll visible) */}
-        <div className="flex-1 overflow-y-auto no-scrollbar px-5 sm:px-6 pb-6 pt-1">
+        <div className="flex-1 overflow-y-auto no-scrollbar px-4 sm:px-6 pb-8 pt-1">
           {successData ? (
             // Mensaje de éxito al registrar
             <div className="flex flex-col items-center justify-center py-8 text-center gap-4">

@@ -47,13 +47,13 @@ export default function PhotoUploader({
 
       {photoUrl ? (
         // Estado con foto cargada: previsualización y botón para eliminar
-        <div className="relative w-full h-56 sm:h-64 rounded-3xl overflow-hidden group border border-neutral-200 shadow-inner bg-neutral-100">
+        <div className="relative w-full h-44 sm:h-56 rounded-2xl sm:rounded-3xl overflow-hidden group border border-neutral-700 shadow-inner bg-neutral-900">
           <img
             src={photoUrl}
             alt="Foto del podio"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3">
+          <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3">
             <button
               type="button"
               onClick={() => fileInputRef.current?.click()}
@@ -76,15 +76,15 @@ export default function PhotoUploader({
           onClick={() => fileInputRef.current?.click()}
           onDrop={handleDrop}
           onDragOver={handleDragOver}
-          className="w-full h-56 sm:h-64 bg-[#131313] hover:bg-[#1a1a1a] rounded-3xl flex flex-col items-center justify-center cursor-pointer transition-colors border-3 border-neutral-500"
+          className="w-full h-44 sm:h-56 bg-[#131313] hover:bg-[#1a1a1a] rounded-2xl sm:rounded-3xl flex flex-col items-center justify-center cursor-pointer transition-colors border-2 sm:border-3 border-neutral-600 hover:border-orange-500"
           role="button"
           tabIndex={0}
           aria-label="Añadir foto"
         >
-          <span className="text-neutral-500 font-medium text-sm mb-1 tracking-tight">
+          <span className="text-neutral-400 font-medium text-xs sm:text-sm mb-1 tracking-tight">
             Añadir foto
           </span>
-          <span className="text-neutral-800 text-4xl font-light leading-none">
+          <span className="text-neutral-500 text-3xl sm:text-4xl font-light leading-none">
             +
           </span>
         </div>

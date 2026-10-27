@@ -190,7 +190,7 @@ export default function PodiumForm({ raceTitle, onSuccess }: PodiumFormProps) {
             }}
             placeholder="Ej. 20567981"
             required
-            className="w-full bg-[#131313] text-neutral-200 placeholder:italic placeholder:text-neutral-400 text-sm px-4 py-3 sm:py-3.5 rounded-2xl border-3 border-neutral-500 focus:border-orange-500 focus:outline-none transition-all"
+            className="w-full bg-[#131313] text-neutral-200 placeholder:italic placeholder:text-neutral-500 text-base sm:text-sm px-4 py-3 sm:py-3.5 rounded-2xl border-2 sm:border-3 border-neutral-600 focus:border-orange-500 focus:outline-none transition-all"
           />
           {isSearching && (
             <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center pointer-events-none">
